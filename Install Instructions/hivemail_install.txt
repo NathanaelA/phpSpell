@@ -1,0 +1,62 @@
+##############################################################
+ MOD Title: phpbbspell
+ MOD Version: 1.06
+ Author: Team phpSpell (Ifroggy & Nathan_Anderson)
+ Description: Spell checker for Hivemail messages!
+
+ You need to download a dictionary word list before you can install it.
+ You should be able to download one from my site.
+
+ Installation (ONLY FOR Hivemail):
+ ---------------------------------
+ 1. In spell_config.php set:
+      $Spell_Config["DB_Type"] = "Hivemail";
+
+ 2. Edit the Spell_config.php file to change any other settings you might want.
+ 3. Upload all the files in the common & hivemail directory the mail/spelling directory
+
+ ---- If you are going to use the NATIVE PSPELL support you can skip to step 8 ----
+ 4. Go to http://www.yourwebsite.com/mail/spelling/spell_admin.php
+ 5. Install any dictionaries you want.
+ 6. Delete any file ending with .dic on the server (to free up disk space)
+ 7. Delete the spell_admin.php file off the server.
+ ----------------------------------------------------------------------------------
+
+ 8. Follow the steps at the below for changing your templates
+##############################################################
+
+
+To Change your templates:
+1. Enter the Administration Panel.
+2. Click under the "Templates" menu the "Modify" command
+3. Click "Expand All Groups"
+4. Click the "change original" (or the "edit") link next to the "Compose" in the "Compose Screen" section.
+5. Please make sure you are ADDING the following and not overwritting anything.
+
+6. [ FIND ]-----------------------------------------
+
+<script language="JavaScript">
+
+7. [ BEFORE, ADD ]----------------------------------
+
+<script language='javascript' src='spelling/spell_hivemail.js'></script>
+
+
+8. [ FIND ]-----------------------------------------
+
+<tr class="normalRow">
+        <td class="normalLeftCell" style="padding-right: 40px;" valign="top"><span class="normalfont"><b>Signatures:</b></span>
+
+
+9. [ BEFORE, ADD ]----------------------------------
+
+<%if !$data[html]%>
+<tr class="normalRow">
+  <td class="normalLeftCell" colspan=2 valign="top">&nbsp;<input type="button" class="bginput" value="Spell Check" onclick="openspell();"></td></tr>
+<%endif%>
+
+
+---------------------------------------------------
+10.  Click the "Update Template" button.
+
+You are all done!

@@ -1,0 +1,81 @@
+##############################################################
+## MOD Title: phpbbspell
+## MOD Version: 1.06
+## Author: Team phpSpell (Ifroggy & Nathan_Anderson)
+## Description: Spell checker for PHPBB messages!
+##
+## Installation Level: easy
+## Installation Time: 3 Minutes + time for your server to install words
+## Files To Edit: 1 Template
+## Included Files: phpSpell.html, spell_config.php, spell_phpnuke.js,
+## spell_admin.php, spellcheck.php, spelling.js, spell_langtemplate.php
+## spell_diags.php, spell_English.php, spell_phpbb.php, admin_spellcheck.php
+##############################################################
+## This MOD is released under the GPL License.
+## Intellectual Property is retained by the MOD Author(s) listed above
+##############################################################
+## For Security Purposes, Please Check: http://www.phpbb.com/mods/downloads/ for the
+## latest version of this MOD. Downloading this MOD from other sites could cause malicious code
+## to enter into your phpBB Forum. As such, phpBB will not offer support for MOD's not offered
+## in our MOD-Database, located at: http://www.phpbb.com/mods/downloads/
+##############################################################
+##
+## You need to download a dictionary word list before you can install it.
+## You should be able to download one from my site.
+##
+##
+## Installation (ONLY FOR phpNuke):
+## ---------------------------------
+## 1. In spell_config.php set:
+##      $Spell_Config["DB_Type"] = "PHPNUKE";
+##
+## 2. Edit the Spell_config.php file to change any other settings you might want.
+## 3. Upload all the files in the common & phpnuke directory the forum/spelling directory
+##
+##  ---- If you are going to use the NATIVE PSPELL support you can skip to step 8 ----
+## 4. Upload admin_Spellcheck.php to your forum/admin directory.
+## 5. Go into Administration and click "Spellcheck" under Forum Admin
+## 6. Install any dictionaries you want.
+## 7. Delete any file ending with .dic on the server (to free up disk space)
+## 8. You will need to delete the Spellcheck Admin files since they are NOT secured on PHPNUKE!
+## -----------------------------------------------------------------------------------
+##
+## 9. Follow the steps at the bottom of this document for changing the templates.
+##
+##############################################################
+## Before Adding This MOD To Your Forum, You Should Back Up All Files Related To This MOD
+##############################################################
+#
+#-----[ OPEN ]------------------------------------------
+#
+ templates/subsilver/posting_body.tpl
+#
+#-----[ FIND ]------------------------------------------
+#
+<script language="JavaScript" type="text/javascript">
+}
+#
+#-----[ BEFORE, ADD ]------------------------------------------
+#
+<script language='javascript' src='modules/Forums/spelling/spell_phpnuke.js'></script>
+#
+#-----[ FIND ]------------------------------------------
+#
+  <tr>
+      <td colspan="9">
+          <span class="smalltext">
+    <textarea name="message" rows="15" cols="35" wrap="virtual" style="width:450px" tabindex="3" class="post" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);">{MESSAGE}</textarea>
+       </span>
+           </td>
+  </tr>
+#
+#-----[ AFTER, ADD ]------------------------------------------
+#
+
+  <tr><td colspan="9" align="right">
+     <input type="button" class="mainoption" value="SpellCheck" name="button" onclick="openspell();">
+  </td></tr>
+#
+#-----[ SAVE/CLOSE ALL FILES ]------------------------------------------
+#
+# EoM

@@ -1,0 +1,51 @@
+##############################################################
+ MOD Title: phpbbspell
+ MOD Version: 1.06
+ Author: Team phpSpell (Ifroggy & Nathan_Anderson)
+ Description: Spell checker!
+ Instructions: Thanks to Dove!
+
+ You need to download a dictionary word list before you can install it.
+ You should be able to download one from my site.
+
+ Installation:
+ ---------------------------------
+ 1. In spell_config.php set:
+      $Spell_Config["DB_Type"] = "MySQL";
+
+ 2. Change the $Spell_Config user name, password, & database settings.
+ 3. Edit the Spell_config.php file to change any other settings you might want.
+ 4. Upload all the files in the common & Yabbse directory to the forum/spelling directory
+ 5. Go to http://www.yourwebsite.com/forum/spelling/spell_admin.php
+ 6. Install any dictionaries you want.
+ 7. Delete any file ending with .dic on the server (to free up disk space)
+ 8. Delete the spell_admin.php file off the server.
+ 9. Follow the steps at the below for changing your templates
+##############################################################
+
+  You will need to modify the HTML in which ever program you use and add the following javascript & buttons:
+
+
+Open post.template.php in themes/default folder:
+ 
+Find around line 350:
+ 
+<td align="center" colspan="2">', !empty($settings['additional_options_collapsable']) ? '
+<script language="JavaScript" type="text/javascript"><!--
+ 
+Change to:
+ 
+<td align="center" colspan="2">', !empty($settings['additional_options_collapsable']) ? '
+<script language="Javascript" src="spelling/spellmessage.js"></script>   <script language="JavaScript" type="text/javascript"><!--
+ 
+Find around line 356:
+ 
+<input type="submit" name="preview" value="' . $txt[507] . '" onclick="return submitThisOnce(this);" accesskey="p" tabindex="4" />';
+ 
+Change to:
+ 
+<input type="submit" name="preview" value="' . $txt[507] . '" onclick="return submitThisOnce(this);" accesskey="p" tabindex="4" />   <input type="button" class="button" name="spellcheck" value="SpellCheck" accesskey="p" tabindex="4" onclick="openspell();"/>';
+ 
+
+
+Then you will be all done!

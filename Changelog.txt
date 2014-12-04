@@ -1,0 +1,218 @@
+
+ History:
+    Beta 1.06r -
+	- Added PHPBB 3.0 Support
+	- Fix for Suggest Bug
+
+    Beta 1.06q - 
+	- Safari 3.0 Support
+
+    Beta 1.06p -
+	- Fixed IE UTF Encoding issue on some sites (see IE_UTF_Encode variable)
+	- Fixed Drop S support on words that are actually misspelleded with a double s
+	- Fixed for newer PHP support using _REQUEST / _POST / _COOKIE variables
+	- Added user supplied Polish language file (Thanks Pablo)
+	- Fixed Word_Is_Case warning.  (But was added in 106m)
+	- Fixed issue with pspell module
+	- Added user supplied smf module 
+
+     Beta 1.06o -
+	- Fixed Safari Support
+	- Updated Install Instructions
+	- Added some Beta support for html coloring schemes (phpbb_alpha)
+
+     Beta 1.06n -
+        - Re-added code for First Found "Correct" word. (Got removed in 1.06m)
+        - Re-Added Opera 7.2 fix (Got removed in 1.06m)
+        - Fixed a minor bug with Language support
+        - Fixed some minor Documentation errors
+
+     Beta 1.06m -
+        - Fixed a minor bug in Language Support
+        - Fixed MSSQL support
+        - Updated vBulletin support
+        - Updated Spell Engine to Properly support Russian (& other Languages) character sets
+        - Updated Engine to allow Language files to have Localizations
+        - Updated Engine to automatically remove html entities.
+        - Added Uppercase/Lowercase/Propercase word detection for suggested words
+
+     Beta 1.06l -
+        - Added Russian Language Support
+        - Fixed lockup/loop bug in REALLY weird cases.
+        - Fixed a typo in MySQL support
+        - Changed virtually all " to ' in code -- PHP handles ' quote code faster.
+        - Added support to the Javascript to allow the First Found "CorrecT" word to be put in the word correction box.
+        - Fixed Opera 7.2
+
+     Beta 1.06k -
+        - Added phpMail support
+
+     Beta 1.06j -
+        - Fixed [img][/img] and other tag problems.
+        - Fixed Opera Problem in starting spell checker
+
+     Beta 1.06i -
+        - Fixed major PHP lockup/loop bug.  Thanks to Mosc for informing me of the problem. Fixed the Root problem.
+        - Hopefully I finally got PHPNuke 6.5 support working.  :)
+        - Fixed minor bug in installion on PHPBB
+        - Fixed "[img" tag bug.  It also could effect a couple other tags.
+
+     Beta 1.06h -
+        - Fixed minor Spacing bug with Mozilla 1+
+        - Fixed PHPNuke 6.5 support (Included wrong support file in last version)
+        - Rewrote DB engine AGAIN. :-)  So that Support for others is much easier to add.
+        - Added support for PSPELL
+        - Added support for Invision
+
+     Beta 1.06g -
+        - Fixed a bug with Opera 7.0
+        - Added support for Hivemail 1.2
+        - Updated Database support to be independant of PHPBB (like the very first version of phpSpell)
+        - Add PHPBB, Hivemail, and Native database type libraries.
+
+     Beta 1.06f -
+        - Mozilla 1.0x - fixed support
+        - Macintosh Browser Support(?)
+        - Opera 7+ final support
+        - Fixed phpnuke admin problems(?)
+         - Cleaned up some variable names
+
+     Beta 1.06d & 1.06e -
+        - Fixed a couple more admin phpnuke issues added by the new admin code in 1.06c.
+        - Fixed my typo; phpnuke is supported, postnuke is NOT!
+        - Fixed a stupid security hole.  :-)
+
+     Beta 1.06c -
+        - Fixed a couple more PhpNuke issues
+        - Switched to MJ's Spell_Admin module (Thanks! for layout & formating to use the PHPBB Themes)
+        - Updated Spell_Admin to verify user is Admin; You can now leave the file on the server!
+        - Added optional instruction of how to add language tables to backup
+        = (spell_admin.php, admin_spellcheck.php, spell_phpbb.php, & remove: spell_dictionary_installer.php)
+
+      Beta 1.06b -
+        - Minor change to button html code in readme  (added: class="mainoption")
+        - Updated SQL statement for word table creation (Saves about 3megs)
+        - Add PHPNuke support (For sites that use phpbb w/ phpnuke)
+        - Fixed a couple bugs in the Diagnostics
+        - Fixed the Table prefix not being added
+        = (All Files)
+
+      Beta 1.06a -
+        - Added Opera 7 Beta Support
+        - Added back in "Insert Word Wrap" system (& fixed it to work much better than v1.05).
+                Should be accurate the majority of the time.  :)
+        - Removed bogus "[c" tag from config & Added missing Tags.
+        - Fixed several "&" ampersand problems.
+        - Removed Index on "Word" -- Unique(Word) automatically adds a index; (Saves about 2megs disk space)
+        - Fixed minor warning error message in Diags / Installer from a last minute 1.06 change.
+        - Fixed a couple minor Javascript problems.
+        - Separated PHPBB specific code into its own module
+        - Can load Smilies table from PHPBB now.  :)
+        - Moved all configuration variables into a $Spell_Config array.
+        = (All Files)
+
+    Beta 1.06 -
+        - Re-wrote parsing engine (Its now FASTER.  :-D)
+        - Fixed a unicode conversion problem (Internet Explorer is the only one that needed the fix)
+        - Fixed a Language problem with mysql.
+        - Updated the table to support Internal Theasures & Dictionary in the future
+        - Turned most options into Arrays.
+        - Re-wrote part of the language system; now the Table, Common Words, All Characters, Translation & Sound
+          functions are part of the Language Template File.  (English now is a template)
+          spell_English.php now has about 50 of the most commonly used english words; to speed up spell checking.
+        - Added support to totally disable Off_By_One support.
+        - Fixed a minor bug with ENTER/RETURNS as first characters in messages
+        - Added support to the engine to allow the user to set his language & Lev Distance -- Front end still
+          needs to have this added to it.  So it doesn't really work yet.
+        - Added an additional security check
+        - Removed TAG Closing System & Other unused settings now (Not Needed Anymore)
+        - Removed "Insert Word Wrap" system.   (This is the only downside to the new engine)
+        - Updated Installer to allow you to Force "Safe Mode" support.  If the script times out; click this option
+          And try again.
+        - Allow Each Language to be in a separate table.  Once the Client interface has the ability to choose the
+          Language; then the script will allow you to have true multi-lingual board spell checking.
+        = (All Files / Reimport Words)
+
+    Beta 1.05k -
+        - Fixed a Unicode conversion problem
+        - Should fix a Max Execution timeout problem for some really weird servers.
+        - Updated diagnostics
+        = (spellcheck.php, spell_dictionary_installer.php, spell_diags.php)
+
+
+    Beta 1.05j -
+        - Fixed a couple bug with ending ' removal
+        = (spellcheck.php)
+
+    Beta 1.05i -
+        - Fixed problem with PHP 4.2 and the lack of globalized variables
+        - Updated Installer to be time based for display
+        - Updated Diags to give better db error messages.
+        = (spellcheck.php, spell_diags.php, spell_dictionary_installer.php)
+
+    Beta 1.05h -
+        - Updated Diagnostics to include additional information and one more word.
+        - Updated JS / Spellcheck engine to support Thesaurus.
+        - Updated Cookie support to be more universal naming.
+        - Updated Spellcheck engine to Drop ('s) & (s) support (Enabled by default)
+        - Updated Installer to be smarter for safe mode & allow now add a single word
+        = (all files)
+
+    Beta 1.05g -
+        - Fixed a bug with Mysql4 table support not supplying "corrections"
+        - Sorted Corrections list to be the words with the closest match to
+          be at the top of the list
+        - Added "Off_By_One_Search" support.  (See Spell_Config.php file)
+        = (Spell_Config.php, Spellcheck.php, Spell_diags.php)
+
+    Beta 1.05f -
+        - Fixed a minor javascript problem handling words with ' in them
+        - Added Spell_diags.php
+        = (spelling.js, Spell_diags.php)
+
+    Beta 1.05e -
+        - Fixed a Javascript problem in the spellmessage.js file
+        = (spellmessage.js)
+
+    Beta 1.05d -
+        - Fixed instruction problem
+        = (Readme.txt)
+
+    Beta 1.05c -
+        - Fixed installer case problem with '.dic' dictionaries
+        = (spell_dictionary_install.php)
+
+    Beta 1.05 -
+        - Complete re-write of front-end client side.
+        - Now supports Opera
+        - Traffic to server has been reduced significantly
+        - Multi-language support implemented
+        - Fixed several small bugs
+        - Added Learn, Correct ALL, Ignore ALL.
+        = (All files)
+
+    Beta 1.04 -
+        - Fixed the Javascript "Spell Check" button not working problem.
+        - Add Spelling subdirectory
+
+    Beta 1.03a -
+            - Fixed the mod template to use uppercase commands.
+
+    Beta 1.03 -
+        - Updated installer to support those poor people with Safe_Mode enabled :)
+
+    Beta 1.03rc2 - (Not released)
+        - a lot less database overhead w/ better "bad" word matching.
+
+    Beta 1.03rc1 - (Not released)
+        - Complete backend engine rewrite
+          - Allows much better skipping of tags & symbols & support for other languages
+          - Integration with PHPBB's db layer.
+        - Added Suggest to interface
+        - Added Movement to the highlighted word for Internet Explorer
+
+    Beta 1.02 -
+        - New support for Symbols
+
+    Alpha -
+        - Original Release by Ifroggy

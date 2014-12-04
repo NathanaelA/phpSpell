@@ -1,0 +1,74 @@
+##############################################################
+## MOD Title: phpbbspell
+## MOD Author: Nathan_Anderson <phpspell@master-technology.com> (Team PHP Spell)
+## MOD Description: Spell checker for PHPBB messages!
+## MOD Version: 1.0.6
+##
+## Installation Level: easy
+## Installation Time: 3 Minutes + time for your server to install words
+## Files To Edit: 1 Template
+## Included Files: phpSpell.html, spell_config.php, spellmessage.js,
+## spell_admin.php, spellcheck.php, spelling.js, spell_langtemplate.php
+## spell_diags.php, spell_English.php, spell_phpbb.php, admin_spellcheck.php
+##############################################################
+## This MOD is released under the GPL License.
+## Intellectual Property is retained by the MOD Author(s) listed above
+##############################################################
+## For Security Purposes, Please Check: http://www.phpbb.com/mods/ for the
+## latest version of this MOD. Downloading this MOD from other sites could cause malicious code
+## to enter into your phpBB Forum. As such, phpBB will not offer support for MOD's not offered
+## in our MOD-Database, located at: http://www.phpbb.com/mods/ 
+##############################################################
+## Author Notes:
+##
+## Support Thread was closed on PHPBB's site due to this script not using the template engine.
+##
+## You need to download a dictionary word list before you can install it.
+## Mysite http://www.master-technology.com/demos/spell/download.php has some dictionaries.
+##
+##
+## Installation (PHPBB):
+## ---------------------
+## 1. Edit the Spell_config.php file to change any setting you might want.
+## 2. Change the Spell_Config["DB_Type"] to "PHPBB3"
+## 3. Create a new directory called "spelling" in your forum's directory
+## 4. Upload all the files inside the "COMMON" directory and inside the "PHPBB" directory to the server into your newly created forum/spelling directory
+##
+##  ---- If you are going to use the NATIVE PSPELL support you can skip to step 8 ----
+## 5. Download any dictionarys you want from http://www.master-technology.com/demos/spell/download.php
+## 6. Upload any dictionarys you have into the newly created forum/spelling directory.
+## 7. run the admin_Spellcheck.php in your /spelling folder (i.e. http://yoursite/spell_admin.php
+## 8. Install any dictionaries you want.
+## 9. Delete any file ending with .dic on the server (to free up disk space)
+## 10. Delete the spell_admin.php from your spelling directory
+## -----------------------------------------------------------------------------------
+##
+## 11. Follow the steps at the bottom of this document for changing each of your templates.
+##
+##############################################################
+## Before Adding This MOD To Your Forum, You Should Back Up All Files Related To This MOD
+##############################################################
+#
+#-----[ OPEN ]------------------------------------------
+#
+ /styes/<name>/template/posting_editor.tpl
+#
+#-----[ FIND ]------------------------------------------
+#
+<fieldset class="fields1">
+#
+#-----[ BEFORE, ADD ]------------------------------------------
+#
+<script language='javascript' src='spelling/spellmessage.js'></script>
+#
+#-----[ FIND ]------------------------------------------
+#
+<input type="submit" tabindex="5" name="preview" value="{L_PREVIEW}" class="button1"<!-- IF not S_PRIVMSGS --> onclick="document.getElementById('postform').action += '#preview';"<!-- ENDIF --> />&nbsp;
+#
+#-----[ AFTER, ADD ]------------------------------------------
+#
+  <input type="button" accesskey="c" value="Spell Check" class="button1" onclick="openspell();">&nbsp;
+#
+#-----[ SAVE/CLOSE ALL FILES ]------------------------------------------
+#
+# EoM

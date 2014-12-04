@@ -1,0 +1,11 @@
+
+ Todo:
+	Add Template support for PHPBB (i.e. the spellcheck will then use the current users phpbb template)
+	Add Button in Spell check interface to edit "Learned" list.
+	Add support for full Dictionarys / Theasaures support
+        Add support in the admin interface to delete words and lookup words
+	Add support for other products. :)
+
+
+
+

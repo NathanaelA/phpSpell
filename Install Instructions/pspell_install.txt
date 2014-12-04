@@ -1,0 +1,18 @@
+##############################################################
+ MOD Title: phpbbspell
+ MOD Version: 1.06
+ Author: Team phpSpell (Ifroggy & Nathan_Anderson)
+ Description: Spell checker using the pspell module!
+
+ Please make sure you follow the instructions for the actual software that will be used first
+ as this will install the nessasary files for the board to use the spell checker.
+
+ Installation:
+ ---------------------------------
+ 1. In spell_config.php set:
+      $Spell_Config["DB_Type"] = "pspell";
+
+ 2. Edit the Spell_config.php file to change any other settings you might want.
+ 3. Upload all the files in the pspell directory to the forum/spelling directory
+ 4. Follow the TEMPLATE steps in the install for the program you are using.
+##############################################################

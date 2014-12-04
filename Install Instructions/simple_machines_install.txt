@@ -1,0 +1,58 @@
+##############################################################
+ MOD Title: phpbbspell
+ MOD Version: 1.06
+ Author: Team phpSpell (Ifroggy & Nathan_Anderson)
+ Description: Spell checker for SMF-Simple Machines
+
+ You need to download a dictionary word list before you can install it.
+ You should be able to download one from my site.
+
+ Installation (ONLY FOR Simple Machines):
+ ---------------------------------
+ 1. In the common folder - open spell_config.php & set:
+        $Spell_Config["DB_Type"] = "MySQL";
+
+ 2. Change the $Spell_Config user name, password, & database settings.
+ 3. Edit the Spell_config.php file to change any other settings you might want.
+ 4. Upload all the files in the common & simple machines directory to a newly created forum/spelling directory
+ 5. Go to http://www.yourwebsite.com/forum/spelling/spell_admin.php
+ 6. Install any dictionaries you want.
+ 7. Delete any file ending with .dic on the server (to free up disk space)
+ 8. Delete the spell_admin.php file off the server.
+ ------------------------------------------------------
+ 9. Follow the steps below for changing your template
+
+##############################################################
+## Before Adding This MOD To Your Forum, You Should Back Up All Files Related To This MOD
+##############################################################
+
+
+1. Open up the Themes/default/Post.template.php
+
+2. [ FIND around line 503 ]-----------------------------------------
+
+     <span class="smalltext"><br />', $txt['smf16'], '</span><br />
+     <input type="submit" name="post" value="', $context['submit_label'], '" onclick="return submitThisOnce(this);" accesskey="s" tabindex="3" />
+     <input type="submit" name="preview" value="', $txt[507], '" onclick="return (!document.postmodify.attachmentPreview.value || confirm(\'' . $txt['attach_lose'] . '\')) &amp;&amp; submitThisOnce(this);" accesskey="p" tabindex="4" />';
+     
+3.  [ BEFORE, ADD ]------------------------------------------
+
+     <script language="Javascript" src="spelling/spellmessage.js"></script>
+
+4.  [ REMOVE THE      ';      AT THE END OF THAT CODE AND ADD THIS   ]---------------
+
+     <input type="button" class="" value="Spell Check" onclick="openspell();">';
+     
+ ----- [SO NOW THE ENTIRE BLOCK OF CODE SHOULD LOOK LIKE THIS: ]------------------
+
+     <script language="Javascript" src="spelling/spellmessage.js"></script>
+     <span class="smalltext"><br />', $txt['smf16'], '</span><br />
+     <input type="submit" name="post" value="', $context['submit_label'], '" onclick="return submitThisOnce(this);" accesskey="s" tabindex="3" />
+     <input type="submit" name="preview" value="', $txt[507], '" onclick="return (!document.postmodify.attachmentPreview.value || confirm(\'' . $txt['attach_lose'] . '\')) &amp;&amp; submitThisOnce(this);" accesskey="p" tabindex="4" />
+     <input type="button" class="button" name="spellcheck" value="SpellCheck" onclick="openspell();"/>';
+     
+5.   [ SAVE/CLOSE ALL FILES ]------------------------------------------
+
+
+
+

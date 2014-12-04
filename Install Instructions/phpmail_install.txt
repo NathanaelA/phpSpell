@@ -1,0 +1,69 @@
+##############################################################
+ MOD Title: phpbbspell
+ MOD Version: 1.06
+ Author: Team phpSpell (Ifroggy & Nathan_Anderson)
+ Description: Spell checker for phpMail messages!
+
+ You need to download a dictionary word list before you can install it.
+ You should be able to download one from my site.
+
+ Installation (ONLY FOR phpMail):
+ ---------------------------------
+ 1. In spell_config.php set:
+      $Spell_Config["DB_Type"] = "phpMail";
+
+ 2. Edit the Spell_config.php file to change any other settings you might want.
+ 3. Upload all the files in the common & phpMail sub-directory to the phpMail/spelling directory
+      All files inside the common & phpMail sub-directories need to be in the same /spelling directory.
+
+ ---- If you are going to use the NATIVE PSPELL support you can skip to step 8 ----
+ 4. Go to http://www.yourwebsite.com/phpMail/spelling/spell_admin.php
+ 5. Install any dictionaries you want.
+ 6. Delete any file ending with .dic on the server (to free up disk space)
+ 7. Delete the spell_admin.php file off the server.
+ ----------------------------------------------------------------------------------
+
+ 8. Follow the steps at the below for changing your templates
+##############################################################
+
+
+To Change your template:
+1. Open up the template "templates/send/send.html"
+
+2. [ FIND ]-----------------------------------------
+
+</script>
+
+
+3. [ AFTER, ADD ]----------------------------------
+
+<script language='javascript' src='spelling/spell_phpmail.js'></script>
+
+
+4. [ FIND ]-----------------------------------------
+
+<input type="file" name="uploadfile" size="20" style="font-size: 8pt; font-family: Arial; height:20"></td>
+<td width="156" height="29" align="center">
+
+5. [ After, ADD ]----------------------------------
+
+<input type="button" value="&nbsp;Spell Check" onclick="openspell();" name="spell" style="height: 20; font-family: Arial; font-size: 8pt; "><br>
+
+
+6. [ FIND ]-----------------------------------------
+
+    <td width="503" height="30" colspan="2" align="right"></td>
+        <td align="right" height="30" width="156">
+
+
+
+7. [ REPLACE ]----------------------------------
+
+    <td width="659" height="30" colspan="3" align="right">
+        <input type="button" value="&nbsp;Spell Check" onclick="openspell();" name="spell" style="height: 20; font-family: Arial; font-size: 8pt; ">
+
+
+---------------------------------------------------
+8.  Save the Template
+
+You are all done!

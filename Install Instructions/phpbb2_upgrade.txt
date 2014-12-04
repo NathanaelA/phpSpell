@@ -1,0 +1,25 @@
+This is only if you are upgrading phpbb version of the spellchecker from an much older version of the spell checker. 
+This is a VERY important fix as this fixes the problem with OPERA starting the spellchecker.
+
+---
+
+You will have to modify your templates (Should be the last time ever! :). 
+
+open up the posting_body.tpl and where I told you to put this line: 
+
+<tr><td colspan="9" align="right"> 
+     <input type="button" class="mainoption" value="SpellCheck" name="button" onclick="if(message.value.length)openspell();"> 
+  </td></tr> 
+
+--------------
+
+Well we need to delete this part of it:
+if(message.value.length) 
+
+--------------
+
+So it should actually read: 
+  <tr><td colspan="9" align="right"> 
+     <input type="button" class="mainoption" value="SpellCheck" name="button" onclick="openspell();"> 
+  </td></tr> 
+

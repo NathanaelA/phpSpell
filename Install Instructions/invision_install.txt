@@ -1,0 +1,78 @@
+##############################################################
+ MOD Title: phpbbspell
+ MOD Version: 1.06
+ Author: Team phpSpell (Ifroggy & Nathan_Anderson)
+ Description: Spell checker for Invision messages!
+
+ You need to download a dictionary word list before you can install it.
+ You should be able to download one from my site.
+
+ Installation (ONLY FOR Invision):
+ ---------------------------------
+ 1. In spell_config.php set:
+      $Spell_Config["DB_Type"] = "Invision";
+
+ 2. Edit the Spell_config.php file to change any other settings you might want.
+ 3. Upload all the files in the common & invision directory to the forum/spelling directory
+
+ ---- If you are going to use the NATIVE PSPELL support you can skip to step 8 ----
+ 4. Go to http://www.yourwebsite.com/forum/spelling/spell_admin.php
+ 5. Install any dictionaries you want.
+ 6. Delete any file ending with .dic on the server (to free up disk space)
+ 7. Delete the spell_admin.php file off the server.
+ ----------------------------------------------------------------------------------
+
+ 8. Follow the steps at the below for changing your templates
+##############################################################
+
+
+To Change your templates:
+1. Open up the template "skin_post.php"  (Please note you have to do the find & add TWICE, as the template has a separate code for both the Private Message & the normal message)
+
+2. [ FIND ]-----------------------------------------
+
+function pm_postbox_buttons($data) {
+global $ibforums;
+return <<<EOF
+
+
+3. [ AFTER, ADD ]----------------------------------
+
+<script language='javascript' src='spelling/spell_invision.js'></script>
+
+
+4. [ FIND ]-----------------------------------------
+
+          <td class='row1' width="100%" valign="top"><textarea cols='60' style='width:95%' rows='15' wrap='soft' name='Post' tabindex='3' class='textinput'>$data</textarea>
+
+5. [ After, ADD ]----------------------------------
+
+<br><input type="button" class="forminput" value="Spell Check" onclick="openspell();">
+
+
+6. [ FIND ]-----------------------------------------
+
+function postbox_buttons($data) {
+global $ibforums;
+return <<<EOF
+
+
+7. [ AFTER, ADD ]----------------------------------
+
+<script language='javascript' src='spelling/spell_invision.js'></script>
+
+
+8. [ FIND ]-----------------------------------------
+
+          <td class='row1' width="100%" valign="top"><textarea cols='60' style='width:95%' rows='15' wrap='soft' name='Post' tabindex='3' class='textinput'>$data</textarea>
+
+
+9. [ After, ADD ]----------------------------------
+
+<br><input type="button" class="forminput" value="Spell Check" onclick="openspell();">
+
+
+---------------------------------------------------
+10.  Save the Template
+
+You are all done!

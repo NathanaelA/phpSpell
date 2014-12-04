@@ -1,0 +1,54 @@
+##############################################################
+## MOD Title: phpbbspell
+## MOD Version: 1.06
+## Author: Team phpSpell (Ifroggy & Nathan_Anderson)
+## Description: Spell checker for vB3 messages!
+##
+## Installation Level: easy
+## Installation Time: 3 Minutes + time for your server to install words
+## Files To Edit: 1 Template
+##############################################################
+## This MOD is released under the GPL License.
+## Intellectual Property is retained by the MOD Author(s) listed above
+##############################################################
+## Before Adding This MOD To Your Forum, You Should Back Up All Files Related To This MOD
+##############################################################
+## You need to download a dictionary word list before you can install it.
+## You should be able to download one from my site.
+##
+## Installation (vB3):
+## ---------------------
+## 1. Edit the Spell_config.php file to change any setting you might want.
+## 2. Change the Spell_Config["DB_Type"] to "vBulletin"
+## 3. Upload all the files in the "COMMON" directory and the "vBulletin" directory to the server into the "your forum"/spelling directory
+## 4. goto http://yoursite/yourforum/spelling/spell_admin.php
+## 5. Install any dictionaries you want.
+## 6. Delete any file ending with .dic on the server (to free up disk space)
+## -----------------------------------------------------------------------------------
+##
+## 7. Follow the steps at the bottom of this document for changing each of your templates.
+
+
+
+1. Edit your "New Posting" Group
+2. Edit your "newreply" section
+
+#
+#-----[ FIND ]------------------------------------------------
+#
+</head>
+#
+#-----[ BEFORE, ADD ] ----------------------------------------
+#
+<script language='javascript' src='spelling/spellmessage.js'></script>
+#
+#-----[ FIND ]------------------------------------------------
+#
+	<input type="submit" class="button" name="preview" value="$vbphrase[preview_post]" accesskey="p" tabindex="1" />
+#
+#-----[ AFTER, ADD ]------------------------------------------
+#
+	<input type="button" class="button" name="spellcheck" value="SpellCheck" accesskey="c" tabindex="1" onclick="openspell();"/>
+#
+#-----[ SAVE ]------------------------------------------------
+#

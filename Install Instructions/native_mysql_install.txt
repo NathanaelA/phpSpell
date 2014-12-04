@@ -1,0 +1,33 @@
+##############################################################
+ MOD Title: phpbbspell
+ MOD Version: 1.06
+ Author: Team phpSpell (Ifroggy & Nathan_Anderson)
+ Description: Spell checker!
+
+ You need to download a dictionary word list before you can install it.
+ You should be able to download one from my site.
+
+ Installation:
+ ---------------------------------
+ 1. In spell_config.php set:
+      $Spell_Config["DB_Type"] = "MySQL";
+
+ 2. Change the $Spell_Config user name, password, & database settings.
+ 3. Edit the Spell_config.php file to change any other settings you might want.
+ 4. Upload all the files in the common & native_mysql directory to the forum/spelling directory
+ 5. Go to http://www.yourwebsite.com/forum/spelling/spell_admin.php
+ 6. Install any dictionaries you want.
+ 7. Delete any file ending with .dic on the server (to free up disk space)
+ 8. Delete the spell_admin.php file off the server.
+ 9. Follow the steps at the below for changing your templates
+##############################################################
+
+  You will need to modify the HTML in which ever program you use and add the following javascript & button:
+
+
+   <script language='javascript' src='spelling/spellmessage.js'></script>
+   <input type="button" class="" value="Spell Check" onclick="openspell();">
+
+   You will also need to edit the Spellmessage.js file and change where the field links to on all four lines it is referenced.
+
+Then you will be all done!
